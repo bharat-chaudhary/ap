@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📄 Chat History</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      padding: 30px;
+    }
+
+    .history-box {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .history-item {
+      padding: 10px;
+      border-bottom: 1px solid #333;
+    }
+
+    .bot {
+      color: #4fc3f7;
+    }
+
+    a {
+      color: #90caf9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📄 Full Chat History</h2>
+  <div class="history-box mt-4">
+    {% for item in history %}
+    <div class="history-item">
+      <p><strong>You:</strong> {{ item.user_message }}</p>
+      <p class="bot"><strong>Bot:</strong> {{ item.bot_reply }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="mt-4">
+    <a href="/">⬅️ Back to Chat</a>
+  </div>
+
+</body>
+</html>
